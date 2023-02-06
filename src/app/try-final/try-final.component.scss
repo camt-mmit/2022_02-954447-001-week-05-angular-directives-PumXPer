@@ -1,0 +1,50 @@
+main{
+  margin: auto;
+}
+
+button.bt-add{
+  margin: auto;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 25px;
+  font: 1em sans-serif;
+}
+
+button.bt-add:hover{
+  background-color: #45a049;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+input[type=number]{
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button.bt-delete{
+  width: 9%;
+  margin: auto 1 auto auto;
+  display: block;
+  background-color: #eb2b2b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 15px;
+  font: 1em sans-serif;
+}
+
+.bt-delete:disabled {
+  opacity: 0.5;
+}

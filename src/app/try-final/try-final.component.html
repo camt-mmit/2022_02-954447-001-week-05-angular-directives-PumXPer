@@ -1,0 +1,20 @@
+<main>
+  <h2>Try Final</h2>
+
+  <button class="bt-add" type="button" (click)="add()">Add Row</button>
+
+  <div class="row" *ngFor="let item of items; let i=index">
+    <input
+      #input
+      type="number"
+      [value]="item.value"
+      (change)="onChange(i, input.valueAsNumber)"
+    />
+    <button class="bt-delete" type="button" (click)="delete(i)" [disabled]="items.length <= 1">
+      <i class="material-symbols-outlined">delete_forever</i>
+    </button>
+  </div>
+
+  <output>{{ getResult() }}</output>
+</main>
+

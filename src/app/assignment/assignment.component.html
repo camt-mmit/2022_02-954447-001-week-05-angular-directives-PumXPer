@@ -1,0 +1,32 @@
+<main>
+  <h1> Assignment </h1>
+
+  <button type="button" class="bt-adds" (click)="addSection()">ADD SECTION</button>
+
+  <section *ngFor="let section of sections; let i = index">
+    <div class="row">
+      <h3>Section {{ i+1 }}</h3>
+      <button type="button" (click)="removeSection(i)" [disabled]="sections.length <= 1">
+        <i class="material-symbols-outlined">delete_forever</i>
+      </button>
+    </div>
+    <h3>
+      <button type="button" class="bt-add" (click)="addInput(section)">ADD ROW</button>
+    </h3>
+    <div>
+      <div class="row" *ngFor="let input of section; let j = index">
+        <input
+          #elem
+          type="number"
+          [value]="input.value"
+          (change)="onChange(input, elem.valueAsNumber)"
+        />
+        <button type="button" class="bt-delete" (click)="removeInput(section, j)" [disabled]="section.length <= 1">
+          <i class="material-symbols-outlined">delete_forever</i>
+        </button>
+      </div>
+    </div>
+    <div><b>Result : </b><output>{{ getResult(section) }}</output></div>
+  </section>
+
+</main>
